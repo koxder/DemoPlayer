@@ -1,4 +1,44 @@
-<h2>esta es la vista parcial HOME</h2>
+<div id="live">
+                    <section id="banner">
+                        <header>
+                            <h2> <strong> Films </strong></h2>
+                        </header>
+                    </section>
 
-<input ng-model='persona.nombre'>
-{{persona.nombre}}
+                    <!-- Carousel Live -->
+                    <section class="carousel">
+                        <div class="reel">
+                                <article ng-repeat="friend in friends" class="article">
+                                <a href="/public/player/test/">
+                                    <img src="/content/static/media/images/snapshot.jpg" width="100%"  alt="test" />
+                                    <p class="service">{{friend.name}}</p>
+                                    <p class="provider">{{friend.age}}</p>
+                                </a>
+                                </article>
+                                <!--article class="article">
+                                <a href="/public/player/test/">
+                                    <img src="/content/static/media/images/snapshot.jpg" width="100%"  alt="test" />
+                                    <p class="service">Test</p>
+                                    <p class="provider">A3 Media</p>
+                                </a>
+                                </article>
+                                <article class="article">
+                                <a href="/public/player/test/">
+                                    <img src="/content/static/media/images/snapshot.jpg" width="100%"  alt="test" />
+                                    <p class="service">Test</p>
+                                    <p class="provider">A3 Media</p>
+                                </a>
+                                </article>
+                                    <article class="article">
+                                <a href="/public/player/test/">
+                                    <img src="/content/static/media/images/snapshot.jpg" width="100%"  alt="test" />
+                                    <p class="service">Test</p>
+                                    <p class="provider">A3 Media</p>
+                                </a>
+                                </article-->
+                        </div>
+
+                    </section>              
+                    <br>          
+
+</div>

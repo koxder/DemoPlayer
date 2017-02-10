@@ -1,17 +1,46 @@
 <html ng-app='app'>
 <head>
 
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta name="author" content="Castor Duran castor.duran@gmail.com" />
+        <link rel="stylesheet" href="content/static/css/main.css">
 </head>
 
-<body ng-controller='indexController'>
+<body class="homepage" ng-controller='indexController'>
 
-<header><h1>Este es el controlador indexController</h1></header>
-<nav>
+<div id="header" >
+                <!-- Inner -->
+                    <div class="inner">
+                        <header>
+                            <h1 class="conf">Demo Player</h1>
+                            <hr />
+                            <p class="conf" id="lema">Move your mind move the orld</p>
+                        </header>
+                        <footer>
+                           
+                                <a href="#live" class="button circled scrolly button_conf "></a>
+                            
+                        </footer>
+                    </div>
+                
+                <!-- Menú -->
+                    <nav id="nav">
+                        <ul>
+                            
+                                <li>Castor </a></li>
+                                <li>Duran</a></li>
+                        </ul>
+                    </nav>
+</div>
+<!--nav>
 	<ul>
+
 		<li><a href="#/">Home</a></li>
-		<li><a href="#/Eventos">Eventos</a></li>
+		<li><a href="#/Eventos">Videos</a></li>
 	</ul>
-</nav>
+</nav-->
 
 <main id='mainContent'>
 
@@ -19,7 +48,33 @@
 		
 	</section>
 </main>
-<footer>pie de pagina</footer>
+
+
+<footer>
+<div id="footer">
+    <div class="container" align="center">
+                    <div class="row">
+                        <div class="12u">
+                            <!-- Contact -->
+                                <section class="contact">
+                                    <ul class="icons">
+                                        
+                                        <li><a href="https://github.com/koxder" class="icon fa-github"><span class="label">Github</span></a></li>
+                                        <li><a href="https://es.linkedin.com/in/castor-duran-barreiro-578a0055" class="icon fa-linkedin"><span class="label">Linkedin</span></a></li>
+                                    </ul>
+                                </section>
+                            <!-- Copyright -->
+                                <div class="copyright">
+                                    <ul class="menu">
+                                        <li>Castor Duran Barreiro. &copy; All rights reserved. </li> 
+                                    </ul>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+    </div>
+
+</footer>
 
 <!--External Libraries-->
 <script type="text/javascript" src="content/scripts/libraries/angular/155/angular.min.js">
