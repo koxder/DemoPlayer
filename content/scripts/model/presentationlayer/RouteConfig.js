@@ -6,14 +6,16 @@ $routeProvider.
 		templateUrl:'content/views/home/index.html',
 		controller:'home_indexController'
 	}).
-		when('/Eventos',{
-		templateUrl:'content/views/eventos/index.html',
-		controller:'eventos_indexController'
-	}).
-		when('/Eventos/Register',{
-		templateUrl:'content/views/eventos/register.html',
-		controller:'eventos_registerController'
+		when('/player/:id',{
+		templateUrl:'content/views/player/index.html',
+		controller:'player_indexController',
+        resolve: {
+            playerID: function ($route) {
+                return $route.current.params.id;
+            }
+        }	
 	})
+
 	.otherwise({
 		redirectTo:'/'
 	});

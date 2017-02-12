@@ -8,34 +8,14 @@
                     <!-- Carousel Live -->
                     <section class="carousel">
                         <div class="reel">
-                                <article ng-repeat="friend in friends" class="article">
-                                <a href="/public/player/test/">
-                                    <img src="/content/static/media/images/snapshot.jpg" width="100%"  alt="test" />
-                                    <p class="service">{{friend.name}}</p>
-                                    <p class="provider">{{friend.age}}</p>
+                                <article ng-repeat="video in videos" class="article">
+                                <a href="#/player/{{video.id}}/">
+                                    <img src="/content/static/media/images/{{ video.snapshot }}" width="100%"  alt="test" />
+                                    <p class="service">{{video.name}}</p>
+                                    <p class="provider">{{video.views}}</p>
                                 </a>
                                 </article>
-                                <!--article class="article">
-                                <a href="/public/player/test/">
-                                    <img src="/content/static/media/images/snapshot.jpg" width="100%"  alt="test" />
-                                    <p class="service">Test</p>
-                                    <p class="provider">A3 Media</p>
-                                </a>
-                                </article>
-                                <article class="article">
-                                <a href="/public/player/test/">
-                                    <img src="/content/static/media/images/snapshot.jpg" width="100%"  alt="test" />
-                                    <p class="service">Test</p>
-                                    <p class="provider">A3 Media</p>
-                                </a>
-                                </article>
-                                    <article class="article">
-                                <a href="/public/player/test/">
-                                    <img src="/content/static/media/images/snapshot.jpg" width="100%"  alt="test" />
-                                    <p class="service">Test</p>
-                                    <p class="provider">A3 Media</p>
-                                </a>
-                                </article-->
+                              
                         </div>
 
                     </section>              

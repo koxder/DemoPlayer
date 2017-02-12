@@ -1,7 +1,7 @@
-ServiceManager.PersistenceManager.EventosDAO_REST=
+ServiceManager.PersistenceManager.VideosDAO_REST=
 (function(){
 
-    function privateGetEventos(parameters){
+    function privateGetVideos(parameters){
         
         parameters.http({
             method:'GET',
@@ -9,7 +9,7 @@ ServiceManager.PersistenceManager.EventosDAO_REST=
         }).
         then(
             function successCallback(response){
-                parameters.scope.videos=response.data;
+                parameters.scope.videos=response.data.videos;
             },
             function errorCallback(response){
                 console.log(response.data);
@@ -18,13 +18,13 @@ ServiceManager.PersistenceManager.EventosDAO_REST=
 
     }
 
-    function privateEventosSave(parameters){
+    function privateVideosSave(parameters){
         
 
     }
 
     return {
-            GetEventos:privateGetEventos,
-            EventosSave:privateEventosSave
+            GetVideos:privateGetVideos,
+            VideosSave:privateVideosSave
             };
 })();

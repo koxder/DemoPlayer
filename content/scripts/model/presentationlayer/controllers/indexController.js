@@ -4,8 +4,7 @@ controller('indexController',
 		function($scope,$rootScope){
 
 			$scope.controlador='indexController';
-			$scope.persona={nombre:''};	
-			$scope.eventos=[];
+            $scope.homepage = "homepage";
 
 
 	}]);

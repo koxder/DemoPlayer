@@ -1,0 +1,40 @@
+<div class="container">
+                <article id="main" class="special">
+                    <header>
+                    <br>
+                        <div id="native_player" style="display:none">
+                            <video width="80%" controls autoplay poster="http://{{servers.0.url}}/media/live/{{channel.id}}/snapshot.jpg">
+                                <source src="http://{{servers.0.url}}/media/live/{{channel.id}}/index.m3u8" type="application/vnd.apple.mpegurl">
+                            </video>
+                        </div>              
+                        <div id="js_player" style="display:none">
+                            <script src="{% static "js/public/hls.min.js"%}"></script>
+                            <video id="video" width="80%" controls></video>
+                            <script>
+                                if(Hls.isSupported()) {
+                                    var video = document.getElementById('video');
+                                    var hls = new Hls();
+                                    hls.loadSource('http://{{servers.0.url}}/media/live/{{channel.id}}/index.m3u8');
+                                    hls.attachMedia(video);
+                                    hls.on(Hls.Events.MANIFEST_PARSED,function() {
+                                        video.play();
+                                    });
+                                 }
+                            </script>
+                        </div>                      
+                    </header>
+                </article>
+</div>
+
+<script src="js/public/ua-parser.min.js"></script>
+
+<script type="text/javascript">
+    var parser = new UAParser().getResult();
+    browser = parser.browser.name.toLowerCase();
+    os = parser.os.name.toLowerCase();  
+    if ((browser=='chrome' || browser=='firefox') && (os!='android') && (os!='ios')){
+        $('#js_player').fadeIn(1000);
+    }else{
+        $('#native_player').fadeIn(1000);
+    };
+</script>

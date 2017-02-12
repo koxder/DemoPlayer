@@ -1,20 +1,20 @@
-ServiceManager.PersistenceManager.EventosDAO_LocalStorage=
+ServiceManager.PersistenceManager.VideosDAO_LocalStorage=
 (function(){
 
-    function privateGetEventos(parameters){
+    function privateGetVideos(parameters){
         parameters.scope.videos=
         JSON.parse(
             localStorage.getItem('Videos'));
     }
 
-    function privateEventosSave(parameters){
+    function privateVideosSave(parameters){
         
         localStorage.setItem('Videos',
         JSON.stringify(parameters.scope.videos));
 
     }
     return {
-            GetEventos:privateGetEventos,
-            EventosSave:privateEventosSave
+            GetVideos:privateGetVideos,
+            VideosSave:privateVideosSave
             };
 })();

@@ -1,43 +1,48 @@
 angular.module('app').controller('home_indexController',
-	['$scope', '$http',function($scope,$http){
+	['$scope', '$http', '$interval', '$timeout', function($scope,$http,$interval,$timeout){
 
 		$scope.controlador='home_indexController';
-          $scope.friends = [
-            {name:'John', age:25, gender:'boy'},
-            {name:'Jessie', age:30, gender:'girl'},
-            {name:'Johanna', age:28, gender:'girl'},
-            {name:'Joy', age:15, gender:'girl'}
-        ]
 
-        /*var VideosServicePersistenceTechnologies=
+
+        var VideosServicePersistenceTechnologies =
         ServiceManager.
         VideoService.
         GetAvailablePersistenceTechnologies();
-            
-        (function CargasIniciales(){
+
+        
+        (function InitialLoad(){
         ServiceManager.
         VideoService.
         GetVideo(
             ServiceManager.
-                EventosService.
+                VideoService.
                 CreateServiceParams(
                 VideosServicePersistenceTechnologies.REST,
                 $scope,
                 $http));
-
+        
         $interval(function(){
-            VideoService.
-            EventosService.
-            EventosSave(
             ServiceManager.
-                EventosService.
+            VideoService.
+            VideoSave(
+            ServiceManager.
+                VideoService.
                 CreateServiceParams(
                 VideosServicePersistenceTechnologies.LocalStorage,
                 $scope,
                 null))
         }, 5000);
 
-        })();*/
+        $timeout(function(){
+            if ($scope.videos == undefined){
+                $scope.videos = ServiceManager.
+                                VideoService.
+                                GetDummyVideoData()    
+            }
+            
+        }, 5000);
+
+        })();
 			
 
 

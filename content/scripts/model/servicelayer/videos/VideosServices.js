@@ -1,6 +1,6 @@
     ServiceManager.VideoService=
     (function(){
-    
+
         function privateGetAvailablePersistenceTechnologies(){
             return{REST:0,LocalStorage:1};
         }
@@ -13,6 +13,7 @@
                 scope:_scope,
                 http:_http
             }
+
             return params;
         }
 
@@ -42,9 +43,12 @@
         }
 
         function privateGetVideo(parameters){
-
             GetDAO(parameters.persistenceTechnology)
-            .GetVideo(parameters);
+            .GetVideos(parameters);
+
+            if (!parameters.scope.videos){
+
+            }
         } 
 
         function privateVideoSave(parameters){
@@ -55,7 +59,7 @@
 
         function privateGenerateVideo(){
             return {
-                id:UtilitiesManager.GenerateGUID(),
+                video:UtilitiesManager.GenerateGUID(),
                 url:null,
                 views:null,
                 name:null,
@@ -64,11 +68,48 @@
             };
         }
 
+
+        function privateGetDummyVideoData(){
+                    
+                    return [
+                              {
+                              "id":"1",
+                              "name":"fixture1",
+                              "url":"yahoo.es",
+                              "snapshot":"snapshot.jpg",
+                              "view":2341
+                               },
+                              {
+                              "id":"2",
+                              "name":"fixture2",
+                              "url":"google.es",
+                              "snapshot":"snapshot.jpg",
+                              "view":1235
+                               },
+                              {
+                               "id":"3",
+                              "name":"fixture3",
+                              "url":"google.es",
+                              "snapshot":"snapshot.jpg",
+                              "view":1236
+                               },
+                              {
+                              "id":"4",
+                              "name":"fixture4",
+                              "url":"google.es",
+                              "snapshot":"snapshot.jpg",
+                              "view":1237
+                               }
+                            ]
+                    
+        }
+
         return {
             GetAvailablePersistenceTechnologies:privateGetAvailablePersistenceTechnologies,
             CreateServiceParams:privateCreateServiceParams,
             GetVideo:privateGetVideo,
             VideoSave:privateVideoSave,
-            GenerateVideo:privateGenerateVideo
+            GenerateVideo:privateGenerateVideo,
+            GetDummyVideoData:privateGetDummyVideoData
         };
     })();
