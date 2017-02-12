@@ -11,7 +11,7 @@
             {
                 persistenceTechnology:_persistenceTechnology,
                 scope:_scope,
-                http:_http
+                http:_http,
             }
 
             return params;
@@ -46,10 +46,20 @@
             GetDAO(parameters.persistenceTechnology)
             .GetVideos(parameters);
 
-            if (!parameters.scope.videos){
-
-            }
         } 
+
+        function privateGetVideoInfo(parameters){
+          console.log(parameters);
+            GetDAO(parameters.persistenceTechnology)
+            .GetVideoInfo(parameters);
+
+        }
+
+        function privateGetVideoById(parameters){
+            GetDAO(parameters.persistenceTechnology)
+            .GetVideoById(parameters);
+
+        }  
 
         function privateVideoSave(parameters){
             GetDAO(parameters.persistenceTechnology)
@@ -108,6 +118,8 @@
             GetAvailablePersistenceTechnologies:privateGetAvailablePersistenceTechnologies,
             CreateServiceParams:privateCreateServiceParams,
             GetVideo:privateGetVideo,
+            GetVideoInfo:privateGetVideoInfo,
+            GetVideoById:privateGetVideoById,
             VideoSave:privateVideoSave,
             GenerateVideo:privateGenerateVideo,
             GetDummyVideoData:privateGetDummyVideoData

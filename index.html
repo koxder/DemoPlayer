@@ -8,15 +8,15 @@
         <link rel="stylesheet" href="content/static/css/main.css">
 </head>
 
-<body ng-class="homepage" ng-controller='indexController'>
+<body dir="{{direction}}" ng-class="homepage" ng-controller='indexController'>
 
 <div id="header" >
                 <!-- Inner -->
                     <div class="inner">
                         <header>
-                            <h1 class="conf">Demo Player</h1>
+                            <h1 translate class="conf">TITTLE</h1>
                             <hr />
-                            <p class="conf" id="lema">Move your mind move the orld</p>
+                            <p translate="" class="conf" id="lema">SLOGAN</p>
                         </header>
                         <footer>
                            
@@ -29,9 +29,12 @@
                     <nav id="nav">
                         <ul>
                             
-                                <li>Castor </li>
-                                <li>Duran </li>
+  
+      <button ng-click="changeLanguage('ar')" translate="BUTTON_LANG_AR"></button>
+      <button ng-click="changeLanguage('en')" translate="BUTTON_LANG_EN"></button>
                         </ul>
+
+
                     </nav>
 </div>
 
@@ -52,14 +55,14 @@
                                 <section class="contact">
                                     <ul class="icons">
                                         
-                                        <li><a href="https://github.com/koxder" class="icon fa-github"><span class="label">Github</span></a></li>
-                                        <li><a href="https://es.linkedin.com/in/castor-duran-barreiro-578a0055" class="icon fa-linkedin"><span class="label">Linkedin</span></a></li>
+                                        <li><a href="https://github.com/koxder" class="icon fa-github"><span  class="label">GITHUB</span></a></li>
+                                        <li><a href="https://es.linkedin.com/in/castor-duran-barreiro-578a0055" class="icon fa-linkedin"><span  class="label">LINKEDIN</span></a></li>
                                     </ul>
                                 </section>
                             <!-- Copyright -->
                                 <div class="copyright">
                                     <ul class="menu">
-                                        <li>Castor Duran Barreiro. &copy; All rights reserved. </li> 
+                                        <li translate > NAME</li> 
                                     </ul>
                                 </div>
                         </div>
@@ -70,10 +73,15 @@
 </footer>
 
 <!--External Libraries-->
-<script type="text/javascript" src="content/scripts/libraries/angular/155/angular.min.js">
-</script>
-<script type="text/javascript" src="content/scripts/libraries/angular/modules/route/155/angular-route.min.js">
-</script>
+<script type="text/javascript" src="content/scripts/libraries/angular/155/angular.min.js"></script>
+<script type="text/javascript" src="content/scripts/libraries/angular/modules/route/155/angular-route.min.js"></script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-translate/2.14.0/angular-translate.min.js
+"></script>
+
+<script src="http://cdn.dashjs.org/latest/dash.all.min.js"></script>
+
+<script src="content/scripts/libraries/uaparser/ua-parser.min.js"></script>
 
 <!--AppConfig-->
 <script type="text/javascript" src="content/scripts/model/presentationlayer/AppConfig.js"></script>
@@ -81,13 +89,16 @@
 <!--RouteConfig-->
 <script type="text/javascript" src="content/scripts/model/presentationlayer/RouteConfig.js"></script>
 
+<!--Translate Config-->
+<script type="text/javascript" src="content/scripts/model/presentationlayer/TranslateConfig.js"></script>
+
 <!--Utilities Layer-->
 <script type="text/javascript" src="content/scripts/model/utilitieslayer/UtilitiesManager.js"></script>
 
 <!--Persistence Layer-->
 <script type="text/javascript" src="content/scripts/model/persistencelayer/eventos/EventosDAO_REST.js"></script>
-<script type="text/javascript" src="content/scripts/model/persistencelayer/eventos/EventosDAO_LocalStorage.js"></script>
 
+<script type="text/javascript" src="content/scripts/model/persistencelayer/eventos/EventosDAO_LocalStorage.js"></script>
 
 <script type="text/javascript" src="content/scripts/model/persistencelayer/videos/VideosDAO_REST.js"></script>
 <script type="text/javascript" src="content/scripts/model/persistencelayer/videos/VideosDAO_LocalStorage.js"></script>
@@ -108,5 +119,8 @@
 <script type="text/javascript" src="content/scripts/model/presentationlayer/controllers/eventos/indexController.js"></script>
 
 <script type="text/javascript" src="content/scripts/model/presentationlayer/controllers/eventos/registerController.js"></script>
+
+
+
 </body>
 </html>

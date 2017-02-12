@@ -1,5 +1,6 @@
-angular.module('app',['ngRoute']);
+angular.module('app',['ngRoute','pascalprecht.translate']);
 
 var ServiceManager={
 	PersistenceManager:{}
 };
+
