@@ -5,7 +5,7 @@ ServiceManager.PersistenceManager.VideosDAO_REST=
         
         parameters.http({
             method:'GET',
-            url:'https://demo5131397.mockable.io/videos'
+            url: ConfigurationManager.config.URL_BACKEND
         }).
         then(
             function successCallback(response){
@@ -20,7 +20,7 @@ ServiceManager.PersistenceManager.VideosDAO_REST=
     function privateGetVideoById(parameters){
         parameters.http({
             method:'GET',
-            url:'https://demo5131397.mockable.io/videos/' + parameters.scope.id
+            url: ConfigurationManager.config.URL_BACKEND + parameters.scope.id
         }).
         then(
             function successCallback(response){
@@ -31,33 +31,41 @@ ServiceManager.PersistenceManager.VideosDAO_REST=
             }           
             );
     }
-
 
     function privateGetVideoInfo(parameters){
         parameters.http({
             method:'GET',
-            url:'http://www.omdbapi.com/?i='+ parameters.scope.video.id_imdb +'&plot=short&r=json'
+            url: ConfigurationManager.config.OMDB_API +'?i='+ parameters.scope.video.id_imdb +'&plot=short&r=json'
         }).
         then(
             function successCallback(response){
-                //This part is for requirements, but the best aproach is get data from REST API
-                // to this language
-                if (parameters.scope.language == "ar")}
-                parameters.scope.video = response.data;
+                //This part is for requirements, but the best aproach is get data from REST API in current language.
+                if (parameters.scope.language == "ar"){
+
+                    UtilitiesManager.TranslateText("en", "ar", response.data.Title, parameters).then(function(translateText){
+                       parameters.scope.video.Title = translateText;
+                    });
+                    UtilitiesManager.TranslateText("en", "ar", response.data.Plot, parameters).then(function(translateText){
+                       parameters.scope.video.Plot = translateText;
+                    });                                       
+                    UtilitiesManager.TranslateText("en", "ar", response.data.Language, parameters).then(function(translateText){
+                       parameters.scope.video.Language = translateText;
+                    });
+                    parameters.scope.video.app_lang = "ar";
+                }else{
+                    parameters.scope.video.app_lang = "en";
+                }
+                 angular.extend(parameters.scope.video, response.data);
+
             },
             function errorCallback(response){
                 console.log(response.data);
             }           
             );
-
     }
 
     function privateVideosSave(parameters){
-        
-
     }
-
-
 
     return {
             GetVideos:privateGetVideos,

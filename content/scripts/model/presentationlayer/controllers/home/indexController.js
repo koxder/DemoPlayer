@@ -3,13 +3,11 @@ angular.module('app').controller('home_indexController',
 
 		$scope.controlador='home_indexController';
 
-
         var VideosServicePersistenceTechnologies =
         ServiceManager.
         VideoService.
         GetAvailablePersistenceTechnologies();
 
-        
         (function InitialLoad(){
         ServiceManager.
         VideoService.
@@ -43,7 +41,4 @@ angular.module('app').controller('home_indexController',
         }, 5000);
 
         })();
-			
-
-
 	}]);

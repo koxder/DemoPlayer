@@ -2,13 +2,10 @@ ServiceManager.PersistenceManager.VideosDAO_LocalStorage=
 (function(){
 
     function privateGetVideos(parameters){
-        parameters.scope.videos=
-        JSON.parse(
-            localStorage.getItem('Videos'));
+        parameters.scope.videos= JSON.parse(localStorage.getItem('Videos'));
     }
 
     function privateGetVideoById(parameters){
-        console.log("Private Get Videos ");
         videos= JSON.parse(
                 localStorage.getItem('Videos'));
         
@@ -19,15 +16,12 @@ ServiceManager.PersistenceManager.VideosDAO_LocalStorage=
     }
 
     function privateGetVideoInfo(parameters){
-            //Implement
-
+            //Should be implemented
     }
 
-    function privateVideosSave(parameters){
-        
+    function privateVideosSave(parameters){        
         localStorage.setItem('Videos',
         JSON.stringify(parameters.scope.videos));
-
     }
     return {
             GetVideos:privateGetVideos,

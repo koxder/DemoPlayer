@@ -8,7 +8,6 @@ controller('indexController',
             $scope.direction = "ltr"
 
             $scope.changeLanguage = function (langKey) {
-                console.log(langKey);
                 $translate.use(langKey);
                 if (langKey == "ar"){
                     $rootScope.language = "ar";
@@ -16,7 +15,10 @@ controller('indexController',
                 }else{
                     $rootScope.language = "en";
                     $scope.direction = "ltr";
-                }                
+                }
+                $rootScope.$broadcast('changeLanguageEvent', {
+                    data: ''
+                });                       
             };
 
 

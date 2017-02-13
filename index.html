@@ -1,90 +1,81 @@
 <html ng-app='app'>
+
 <head>
-
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <meta name="author" content="Castor Duran castor.duran@gmail.com" />
         <link rel="stylesheet" href="content/static/css/main.css">
+
 </head>
 
 <body dir="{{direction}}" ng-class="homepage" ng-controller='indexController'>
 
 <div id="header" >
-                <!-- Inner -->
                     <div class="inner">
                         <header>
                             <h1 translate class="conf">TITTLE</h1>
-                            <hr />
+                            <hr/>
                             <p translate="" class="conf" id="lema">SLOGAN</p>
                         </header>
                         <footer>
-                           
-                                <a href="#live" class="button circled scrolly button_conf "></a>
-                            
+                                <a href="#/" class="button circled scrolly button_conf "></a>
                         </footer>
                     </div>
-                
-                <!-- Menú -->
+            
                     <nav id="nav">
                         <ul>
-                            
-  
-      <button ng-click="changeLanguage('ar')" translate="BUTTON_LANG_AR"></button>
-      <button ng-click="changeLanguage('en')" translate="BUTTON_LANG_EN"></button>
+                            <li><a href="#/" ng-click="changeLanguage('ar')" translate="BUTTON_LANG_AR" ></a></li>
+                            <li><a href="#/" ng-click="changeLanguage('en')" translate="BUTTON_LANG_EN" ></a></li>
                         </ul>
-
-
                     </nav>
 </div>
 
 <main id='mainContent'>
-
-	<section ng-view>
-		
+	<section ng-view>		
 	</section>
 </main>
-
 
 <footer>
 <div id="footer">
     <div class="container" align="center">
-                    <div class="row">
-                        <div class="12u">
-                            <!-- Contact -->
-                                <section class="contact">
-                                    <ul class="icons">
-                                        
-                                        <li><a href="https://github.com/koxder" class="icon fa-github"><span  class="label">GITHUB</span></a></li>
-                                        <li><a href="https://es.linkedin.com/in/castor-duran-barreiro-578a0055" class="icon fa-linkedin"><span  class="label">LINKEDIN</span></a></li>
-                                    </ul>
-                                </section>
-                            <!-- Copyright -->
-                                <div class="copyright">
-                                    <ul class="menu">
-                                        <li translate > NAME</li> 
-                                    </ul>
-                                </div>
-                        </div>
+        <div class="row">
+            <div class="12u">
+                    <section class="contact">
+                        <ul class="icons">
+                            
+                            <li><a href="https://github.com/koxder" class="icon fa-github"><span  class="label">GITHUB</span></a></li>
+                            <li><a href="https://es.linkedin.com/in/castor-duran-barreiro-578a0055" class="icon fa-linkedin"><span  class="label">LINKEDIN</span></a></li>
+                        </ul>
+                    </section>
+                    <div class="copyright">
+                        <ul class="menu">
+                            <li translate >NAME</li> 
+                        </ul>
                     </div>
-                </div>
+            </div>
+        </div>
     </div>
-
+    </div>
 </footer>
 
 <!--External Libraries-->
 <script type="text/javascript" src="content/scripts/libraries/angular/155/angular.min.js"></script>
 <script type="text/javascript" src="content/scripts/libraries/angular/modules/route/155/angular-route.min.js"></script>
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-translate/2.14.0/angular-translate.min.js
+<script type="text/javascript" src=content/scripts/libraries/angular/modules/translate/2140/angular-translate.min.js
 "></script>
 
-<script src="http://cdn.dashjs.org/latest/dash.all.min.js"></script>
+<script src="content/scripts/libraries/players/dash/dash.all.min.js"></script>
 
 <script src="content/scripts/libraries/uaparser/ua-parser.min.js"></script>
 
 <!--AppConfig-->
+
+<script type="text/javascript" src="content/scripts/configuration/Configuration.js"></script>
+
 <script type="text/javascript" src="content/scripts/model/presentationlayer/AppConfig.js"></script>
+
+
 
 <!--RouteConfig-->
 <script type="text/javascript" src="content/scripts/model/presentationlayer/RouteConfig.js"></script>
@@ -95,32 +86,18 @@
 <!--Utilities Layer-->
 <script type="text/javascript" src="content/scripts/model/utilitieslayer/UtilitiesManager.js"></script>
 
-<!--Persistence Layer-->
-<script type="text/javascript" src="content/scripts/model/persistencelayer/eventos/EventosDAO_REST.js"></script>
-
-<script type="text/javascript" src="content/scripts/model/persistencelayer/eventos/EventosDAO_LocalStorage.js"></script>
-
 <script type="text/javascript" src="content/scripts/model/persistencelayer/videos/VideosDAO_REST.js"></script>
 <script type="text/javascript" src="content/scripts/model/persistencelayer/videos/VideosDAO_LocalStorage.js"></script>
 
 <!--Service Layer-->
-<script type="text/javascript" src="content/scripts/model/servicelayer/eventos/EventosServices.js"></script>
-
 <script type="text/javascript" src="content/scripts/model/servicelayer/videos/VideosServices.js"></script>
 
-<!--PresentationLayer-->
 <!--Controllers-->
 <script type="text/javascript" src="content/scripts/model/presentationlayer/controllers/indexController.js"></script>
 
 <script type="text/javascript" src="content/scripts/model/presentationlayer/controllers/home/indexController.js"></script>
 
 <script type="text/javascript" src="content/scripts/model/presentationlayer/controllers/player/indexController.js"></script>
-
-<script type="text/javascript" src="content/scripts/model/presentationlayer/controllers/eventos/indexController.js"></script>
-
-<script type="text/javascript" src="content/scripts/model/presentationlayer/controllers/eventos/registerController.js"></script>
-
-
 
 </body>
 </html>

@@ -1,26 +1,42 @@
-<div class="container">
-                <article id="main" class="special">
-                    <header>
-                    <br>
+<div class="container" >
+  <article id="main" class="special">
+      <header>
+      <br>
+      <!-- Move player to templates-->
+      <div  width="60%">
+          <h1> <b> Dash </b> </h1>                        
+          <video id="videoPlayer" controls></video>
+      </div>
 
-                    <ng-include src="'content/views/player/dash_player.html'">
+      <div ng-if="native_player_visibility" id="native_player">
+          <h1>  <b> Native </b> </h1>
+          <video width="80%" controls autoplay src="https://bitdash-a.akamaihd.net/content/MI201109210084_1/m3u8s/f08e80da-bf1d-4e3d-8899-f0f6155f6efa.m3u8" type="application/vnd.apple.mpegurl">
+          </video>
+      </div> 
+      </header>
+  </article>
+  <br><br>
+    <table >
 
-                     </ng-include>
-
-                    <ng-include src="'content/views/player/native_player.html'">
-
-                     </ng-include>
-  
-                 
-                    </header>
-                </article>
-                <article class="special">
-                  <h1>  <b> {{video.name}} </b> </h1>
-                  <br>
-                  <p> {{video.Plot}}</p>
-                  <p> {{video.Released}}</p>
-                  <p> {{video.Language}}</p>
-                </article>
+      <tbody>
+        <tr>
+           <td translate> TITLE_MOVIE </td>
+          <td>{{video.Title}}</td>
+        </tr>
+        <tr>
+          <td translate> <strong>LANGUAGE <strong></td>
+          <td>{{video.Language}}</td>
+        </tr>
+        <tr>
+          <td translate>YEAR</td>
+          <td>{{video.Year}}</td>
+        </tr>
+        <tr>
+          <td translate>PLOT</td>
+          <td>{{video.Plot}}</td>
+        </tr>
+      </tbody>
+    </table>
 </div>
 
 
