@@ -1,4 +1,4 @@
-@import url("{{site.baseurl}}/font-awesome.min.css");
+@import url("../fonts/font-awesome.min.css");
 
 /*
 	Helios by HTML5 UP
@@ -2099,7 +2099,7 @@
 
 	#header {
 		position: relative;
-		background-image: url("background.jpg");
+		background-image: url("../media/images/background.jpg");
 		background-size: cover;
 		background-position: center center;
 		background-attachment: fixed;
