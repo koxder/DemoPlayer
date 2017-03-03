@@ -706,7 +706,7 @@
 	#header
 	{
 		position: relative;
-		background-image: url('/DemoPlayer/content/static/media/images/background.jpg');
+		background-image: url('aaa/static/media/images/background.jpg');
 		background-size: cover;
 		background-position: center center;
 		background-attachment: fixed;
