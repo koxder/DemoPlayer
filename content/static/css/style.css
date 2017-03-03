@@ -1,5 +1,5 @@
 @charset 'UTF-8';
-@import url('font-awesome.min.css');
+@import url('{{ baseurl }}/font-awesome.min.css');
 
 /*
 	Helios by HTML5 UP
@@ -706,7 +706,7 @@
 	#header
 	{
 		position: relative;
-		background-image: url('{{ baseurl }}content/static/media/images/background.jpg');
+		background-image: url('{{ baseurl }}/background.jpg');
 		background-size: cover;
 		background-position: center center;
 		background-attachment: fixed;
